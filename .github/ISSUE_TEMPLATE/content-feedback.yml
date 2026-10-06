@@ -1,0 +1,19 @@
+name: 💡 Content / Fact Correction
+description: Suggest an improvement, update an outdated fact, or report a factual error
+title: "[CONTENT]: "
+labels: ["content-feedback"]
+body:
+  - type: input
+    id: module_id
+    attributes:
+      label: Module ID or Topic
+      placeholder: "e.g., Module 1.6 or Term 'sycophancy'"
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Correction or Improvement
+      description: Explain the correction with primary sources / URLs if applicable.
+    validations:
+      required: true

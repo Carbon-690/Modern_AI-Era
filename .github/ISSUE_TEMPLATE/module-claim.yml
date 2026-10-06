@@ -1,0 +1,108 @@
+name: 🎯 Claim a Module
+description: Reserve a curriculum module to author with Claude Pro/Max or other AI tools
+title: "[CLAIM]: Module "
+labels: ["module-claim", "in-progress"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Welcome to Modern AI Era Learning Hub Contributions!
+        To avoid duplicate effort and wasted AI subscription credits, please claim a module before you begin authoring.
+        
+        **Rules of Engagement:**
+        - Please claim **one module at a time**.
+        - Claims are reserved for **7 days**. If no draft PR is opened within 7 days, the reservation may be released to another contributor.
+        - You will use `node scripts/make-prompt.js <module-id>` to generate your prompt for Claude Pro/Max.
+
+  - type: dropdown
+    id: module_id
+    attributes:
+      label: Module to Claim
+      description: Select the module you wish to author
+      options:
+        - "1.7 — Transformers & attention, by intuition"
+        - "1.8 — Embeddings: meaning as coordinates"
+        - "2.1 — The AI race: labs, model families & strengths"
+        - "2.2 — Multimodal AI: vision, voice, image, video, real-time"
+        - "2.3 — Reasoning models & “thinking” (test-time compute)"
+        - "2.4 — Open-source vs open-weight vs closed — and running models locally"
+        - "2.5 — Choosing a model: benchmarks, cost, speed, context"
+        - "2.6 — Efficiency under the hood: MoE, distillation, quantization"
+        - "3.1 — Anatomy of a great prompt"
+        - "3.2 — Core prompting techniques"
+        - "3.3 — Personalising AI: system prompts, custom GPTs/Gems/Projects, memory"
+        - "3.4 — Structured output (JSON) & prompt chaining"
+        - "3.5 — Prompting reasoning models differently"
+        - "3.6 — Context engineering: curating what the model sees"
+        - "3.7 — AI for learning & research: deep research, verification, citations"
+        - "4.1 — APIs, SDKs, keys & pricing: talking to a model from code"
+        - "4.2 — Function calling / tool use: giving AI hands"
+        - "4.3 — RAG part 1: giving AI your own knowledge"
+        - "4.4 — RAG part 2: reranking, hybrid search, GraphRAG, agentic RAG"
+        - "4.5 — Fine-tuning vs RAG vs prompting (and LoRA)"
+        - "4.6 — MCP: the “USB-C port” for AI"
+        - "4.7 — Memory: short-term, long-term & user memory"
+        - "4.8 — No-code / low-code AI automation"
+        - "5.1 — What is an agent? The think → act → observe loop"
+        - "5.2 — Workflows vs agents: the classic design patterns"
+        - "5.3 — Agent = Model + Harness"
+        - "5.4 — Skills, AGENTS.md, rules, hooks & plugins"
+        - "5.5 — Multi-agent systems, subagents & A2A"
+        - "5.6 — Loop engineering: Ralph loop & long-running agents"
+        - "5.7 — Computer-use & browser agents"
+        - "5.8 — Agent frameworks landscape"
+        - "6.1 — Evolution of AI coding: autocomplete → agents"
+        - "6.2 — Vibe coding: what, when, and when it bites"
+        - "6.3 — App builders: from idea to deployed website"
+        - "6.4 — Working with coding agents: plan-first, context files, git, tests"
+        - "6.5 — Spec-driven development"
+        - "6.6 — AI for system design & architecture"
+        - "6.7 — Orchestrating a team of coding agents"
+        - "6.8 — Security of AI-generated code"
+        - "7.1 — Evals: measuring AI quality"
+        - "7.2 — Cost, latency & observability"
+        - "7.3 — AI security: prompt injection, jailbreaks, guardrails"
+        - "7.4 — Ethics, copyright, privacy & regulation"
+        - "7.5 — Where it’s heading: alignment, AGI debate, skills that last"
+        - "P1 — Project 1: Personal study assistant over your notes"
+        - "P2 — Project 2: Vibe-code & deploy your personal website"
+        - "P3 — Project 3: A tool-using agent connected to MCP"
+        - "P4 — Project 4: Spec-driven mini product with evals"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: model_used
+    attributes:
+      label: AI Tool / Model Planned
+      description: Which subscription/model do you plan to run the prompt with?
+      options:
+        - "Claude Opus 3.7 / 5.5 (Claude Pro/Max)"
+        - "Claude 3.5 Sonnet (Claude Pro/Team)"
+        - "ChatGPT Plus / Pro (GPT-4o / o1 / o3)"
+        - "Gemini Advanced (Gemini 2.5/3.0)"
+        - "Antigravity / Cursor / Windsurf AI Assistant"
+        - "Other frontier model"
+    validations:
+      required: true
+
+  - type: input
+    id: estimated_date
+    attributes:
+      label: Target Completion Date
+      description: When do you expect to open a pull request? (Maximum 7 days from today)
+      placeholder: "e.g., 2026-10-13"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Contributor Checklist
+      options:
+        - label: "I will use `node scripts/make-prompt.js <id>` to generate the full prompt."
+          required: true
+        - label: "I will test my code locally with `node scripts/validate.js --only <id> --browser` before submitting a PR."
+          required: true
+        - label: "I understand that if I do not submit a PR within 7 days, the claim may be released."
+          required: true

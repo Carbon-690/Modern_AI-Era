@@ -1,0 +1,32 @@
+name: Validate Learning Hub
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check syntax of all JavaScript files
+        run: |
+          for f in content/modules/*.js content/glossary/*.js assets/js/*.js content/*.js scripts/*.js; do
+            if [ -f "$f" ]; then
+              node --check "$f"
+            fi
+          done
+
+      - name: Run Learning Hub Validator (Static & Headless Browser)
+        run: |
+          node scripts/validate.js --browser

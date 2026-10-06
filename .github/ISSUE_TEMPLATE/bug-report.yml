@@ -1,0 +1,41 @@
+name: 🐛 Bug Report
+description: Report a broken widget, layout issue, rendering error, or validator problem
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug in the Learning Hub engine or modules!
+  - type: input
+    id: module_route
+    attributes:
+      label: Affected Route or Module
+      placeholder: "e.g., #/m/1.5 or #/glossary"
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser used
+      options:
+        - "Chrome / Chromium"
+        - "Firefox"
+        - "Safari"
+        - "Edge"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe what you observed vs what you expected to happen
+    validations:
+      required: true
+  - type: textarea
+    id: console_log
+    attributes:
+      label: Browser Console Errors (if any)
+      description: Open DevTools (F12) -> Console and paste any red error messages here.
+      render: shell

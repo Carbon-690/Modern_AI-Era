@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern AI Era — Learning Hub</title>
+  <meta name="description" content="A visual, beginner-to-advanced learning hub for every concept of the modern AI era (Nov 2022 – Oct 2026).">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>try { var s = JSON.parse(localStorage.getItem('mai-hub-v1') || '{}'); if (s.theme) document.documentElement.dataset.theme = s.theme; } catch (e) {}</script>
+</head>
+<body>
+  <!-- shared SVG arrow markers used by every diagram -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-arrowhead"/></marker>
+      <marker id="arr-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-arrowhead accent"/></marker>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/"><span class="logo">◆</span><span>Modern AI Era<small>Learning Hub · Nov 2022 → Oct 2026</small></span></a>
+      <div class="overall"><div class="bar"><span id="overall-bar"></span></div><small id="overall-text"></small></div>
+      <nav id="nav" aria-label="Curriculum"></nav>
+      <div class="side-links">
+        <a href="#/map">🗺 Concept map</a>
+        <a href="#/glossary">📖 Glossary</a>
+        <a href="#/resources">🔗 Resource library</a>
+        <a href="#/cheatsheets">📋 Cheat sheets</a>
+      </div>
+    </aside>
+    <div class="main-wrap">
+      <header class="topbar">
+        <button id="menu-btn" class="icon-btn" aria-label="Open menu">☰</button>
+        <div class="search">
+          <input id="search" type="search" placeholder="Search concepts & terms…   press  /" autocomplete="off" aria-label="Search">
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+        <span class="spacer"></span>
+        <button id="theme-btn" class="icon-btn" title="Toggle light / dark" aria-label="Toggle theme">◐</button>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+
+  <script src="assets/js/diagrams.js"></script>
+  <script src="content/curriculum.js"></script>
+  <script src="assets/js/widgets.js"></script>
+  <script src="assets/js/quiz.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
